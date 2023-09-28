@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    {% block content %} {% endblock %}
+</div>
+
+</body>
+
+</html>

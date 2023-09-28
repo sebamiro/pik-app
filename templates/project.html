@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if page.title %}
+
+    <a href={{ config.base_url }} >Back</a>
+    {{ page.content | safe }}
+
+{% endif %}
+{% endblock %}
