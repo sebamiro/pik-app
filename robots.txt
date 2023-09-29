@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://sebamiro.github.io/pik-app/sitemap.xml
