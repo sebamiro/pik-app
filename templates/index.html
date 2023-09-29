@@ -2,27 +2,36 @@
 
 {% block content %}
 
-    <div style="margin-block-end: 3vh;" id="title" >
-        <a style="font-size: 34px; font-weight: bold;">Sebastán Miró</a>
-        <span style="color: GrayText; visibility: hidden;" >an Argentinian developer, technology enthusiast</span>
+<div style="margin-block: 30vh;" >
+    <h1 id="Title" >PIK</h1>
+    <div>
+        <p>Payments app</p>
     </div>
+</div>
 
-    {%- set directories = get_section(path="_index.md") -%}
-        
-    {% for directory in directories.subsections | reverse %}
-    {%- set year = get_section(path=directory) -%}
-    <h1>{{year.title}}</h1>
-    {% for project in year.pages | reverse %}
-    <li style="
-        list-style-type: none;
-        color: GrayText;
-        font-size: 14px;
-        margin-block: .7rem .7rem;"
-        >
-        <a href={{ project.permalink }} >{{ project.title }}</a>
-        {{ project.description }}
-    </li>
-    {% endfor %}
-    {% endfor %}
+{%- set content_directories = get_section(path="_index.md") -%}
+
+{% for directory in content_directories.subsections %}
+    <div>
+        {%- set content_section = get_section(path=directory) -%}
+
+        <h2>{{ content_section.title }}</h2>
+       
+        <div style="max-width: 66ch;
+            margin-inline: auto;
+            margin-block-end: 5vh;
+            text-align: justify;">
+            {{ content_section.content | safe }} 
+        </div>
+
+        {% for page in content_section.pages %}
+
+            <div>
+                {{ page.title }}
+            </div>
+
+        {% endfor %}
+    </div>
+{% endfor %}
 
 {% endblock %}
